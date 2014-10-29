@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "name": "pageTest",
+    "version": "1.0",
+    "description": "pageTest Chrome插件",
+    "icons": {
+        "16": "r/i/icon16.png",
+        "48": "r/i/icon48.png",
+        "128": "r/i/icon128.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "19": "r/i/icon16.png",
+            "38": "r/i/icon48.png"
+        },
+        "default_title": "index",
+        "default_popup": "index.html"
+    },
+    "background": {
+        "scripts": [
+            "r/j/back.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://www.webpagetest.org/"],
+            "js": ["r/j/zepto.js","r/j/webpagetest.js"]
+        }
+    ]
+}
